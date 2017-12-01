@@ -7,6 +7,7 @@
 ;; Package needs to install with M-x package-install:
 ;;  * tide
 ;;  * company
+;;  * web-mode
 
 
 
@@ -47,7 +48,7 @@
 (setq company-tooltip-align-annotations t)
 
 ;; formats the buffer before saving
-(add-hook 'before-save-hook 'tide-format-before-save)
+;; (add-hook 'before-save-hook 'tide-format-before-save)
 
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
 
@@ -61,12 +62,6 @@
 ;; Web-mode
 ;; For more help, visit http://web-mode.org
 ;;
-
-;; Tell emacs where is your personal elisp lib dir
-(add-to-list 'load-path "~/.emacs.d/lisp")
-
-;; Load web-mode which is in ~/.emacs.d/lisp
-(load "web-mode")
 
 ;; Auto-activate web-mote when opening certain files
 (require 'web-mode)
