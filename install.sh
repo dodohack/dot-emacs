@@ -26,4 +26,8 @@ echo "Updating .spacemacs..."
 cd $ROOT
 cp dot.spacemacs ~/.spacemacs
 
+# Install pylint and eslint for syntax check in flycheck
+sudo pip install pylint
+sudo npm install -g eslint
+
 echo "Done"

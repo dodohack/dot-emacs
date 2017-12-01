@@ -139,11 +139,12 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
-                               :weight normal
-                               :width normal
-                               :powerline-scale 1.1)
+   ;; dotspacemacs-default-font '("Source Code Pro"
+   ;;                            :size 13
+   ;;                            :weight normal
+   ;;                            :width normal
+   ;;                            :powerline-scale 1.1)
+
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
@@ -317,18 +318,23 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  ;; Add flycheck-mode globally
+  ;; (add-hook 'php-mode-hook #'flycheck-mode)
+
+  ;; NOTE: This works
+  ;; (global-set-key (kbd "C-]") 'forward-char)
+
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; ac-php key binding
   ;;
-  (add-hook 'php-mode-hook
-            '(lambda ()
-               ;; Find definition
-               (define-key php-mode-map (kbd "C-]") 'ac-php-find-symbol-at-point)
-               ;; Show tip
-               (define-key php-mode-map (kbd "C-t") 'ac-php-show-tip)
-               ;; Show complete suggestion
-               (define-key php-mode-map (kbd "C-.") 'company-complete)
-               ))
+  ;; global-set-key works, but we only need it for php mode
+  (global-set-key (kbd "C-]") 'ac-php-remake-tags)
+  (global-set-key (kbd "C-t") 'ac-php-show-tip)
+  ;; This doesn't work neither
+  (global-set-key (kbd "C-.") 'company-complete)
+  ;; These don't work
+  ;;(spacemacs/set-leader-keys "C-." 'company-complete)
+  ;; (spacemacs/set-leader-keys-for-major-mode 'php-mode "C-." 'company-complete)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
