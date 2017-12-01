@@ -320,13 +320,15 @@ you should place your code here."
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; ac-php key binding
   ;;
-  ;; Find definition
-  (define-key php-mode-map (kbd "C-]") 'ac-php-find-symbol-at-point)
-  ;; Show tip
-  (define-key php-mode-map (kbd "C-t") 'ac-php-show-tip)
-  ;; Show complete suggestion
-  (define-key php-mode-map (kbd "C-.") 'company-complete)
-  
+  (add-hook 'php-mode-hook
+            '(lambda ()
+               ;; Find definition
+               (define-key php-mode-map (kbd "C-]") 'ac-php-find-symbol-at-point)
+               ;; Show tip
+               (define-key php-mode-map (kbd "C-t") 'ac-php-show-tip)
+               ;; Show complete suggestion
+               (define-key php-mode-map (kbd "C-.") 'company-complete)
+               ))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

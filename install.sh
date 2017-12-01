@@ -3,9 +3,13 @@
 ROOT=`pwd`
 
 # Backup old config file
-cp ~/.emacs ~/.emacs.old
-cp ~/.spacemacs ~/.spacemacs.old
-cp -r ~/.emacs.d ~/.emacs.d.old
+rm ~/.emacs.old
+rm ~/.spacemacs.old
+rm ~/.emacs.d.old
+
+mv ~/.emacs ~/.emacs.old
+mv ~/.spacemacs ~/.spacemacs.old
+mv ~/.emacs.d ~/.emacs.d.old
 
 # Install spacemacs
 echo "Installing spacemacs..."
