@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# This script starts emacsclient and a emacs daemon if necessary
+emacsclient -c -n -e -a "" "$@"
