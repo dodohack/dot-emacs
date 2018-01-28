@@ -31,6 +31,10 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     yaml
+     octave
+     sql
+     markdown
      javascript
      html
      typescript
@@ -52,7 +56,7 @@ values."
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
+     ;;           shell-default-position 'bottom)
      ;; spell-checking
      ;; syntax-checking
      ;; version-control
@@ -139,11 +143,12 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   ;; dotspacemacs-default-font '("Source Code Pro"
-   ;;                            :size 13
-   ;;                            :weight normal
-   ;;                            :width normal
-   ;;                            :powerline-scale 1.1)
+   ;; Source Sans Pro is on Mac OSX
+   dotspacemacs-default-font '("Courier"
+                               :size 16
+                               :weight normal
+                               :width normal
+                               :powerline-scale 1.1)
 
    ;; The leader key
    dotspacemacs-leader-key "SPC"
@@ -335,7 +340,25 @@ you should place your code here."
   ;; These don't work
   ;;(spacemacs/set-leader-keys "C-." 'company-complete)
   ;; (spacemacs/set-leader-keys-for-major-mode 'php-mode "C-." 'company-complete)
+
+  ;; Set initial window position and size size
+  initial-frame-alist '((top . 30) (left . 600) (width . 120) (height . 81))
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (company-dcd ivy flycheck-dmd-dub yaml-mode sql-indent mmm-mode markdown-toc markdown-mode gh-md ws-butler winum which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package toc-org tide tagedit spaceline smeargle slim-mode scss-mode sass-mode restart-emacs rainbow-delimiters pug-mode popwin persp-mode pcre2el paradox orgit org-bullets open-junk-file neotree move-text magit-gitflow macrostep lorem-ipsum livid-mode linum-relative link-hint less-css-mode json-mode js2-refactor js-doc info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu emmet-mode elisp-slime-nav dumb-jump diminish define-word company-web company-tern company-statistics company-php column-enforce-mode coffee-mode clean-aindent-mode auto-yasnippet auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
