@@ -338,7 +338,8 @@ you should place your code here."
   ;;
   ;; global-set-key works, but we only need it for php mode
   (global-set-key (kbd "M-] r") 'ac-php-remake-tags)
-  (global-set-key (kbd "M-] d") 'ac-php-show-tip)
+  (global-set-key (kbd "M-] d") 'ac-php-find-symbol-at-point)
+  (global-set-key (kbd "M-] t") 'ac-php-show-tip)
 
   ;;(global-set-key (kbd "C-]") 'ac-php-remake-tags)
   ;;(global-set-key (kbd "C-t") 'ac-php-show-tip)

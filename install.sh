@@ -36,4 +36,4 @@ echo "Done"
 # This will create a shortcode to run emacs client and bring emacs server
 # in the backend, so emacs starts up very fast.
 echo "Please add following function to /etc/profile: "
-echo "function emc() { emacsclient -c -n -a \"\" $* }"
+echo "function emc() { emacsclient -c -n -e -a \"\" \$\* }"
